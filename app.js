@@ -66,14 +66,14 @@ const app = Vue.createApp( {
          this.currentRound++;
          const attackValue = getRandomValue(5, 12);
          this.monsterHealt -= attackValue;
-         this.addLogMessage('Monster', 'attack', attackValue);
+         this.addLogMessage('Player', 'attack', attackValue);
          this.attackPlayer();
 
         },
         attackPlayer(){
             const attackValue = getRandomValue(8, 15);
             this.playerHealth -= attackValue;
-            this.addLogMessage('Player', 'attack', attackValue);
+            this.addLogMessage('Monster', 'attack', attackValue);
         },
         specialAttac(){
             this.currentRound++;
