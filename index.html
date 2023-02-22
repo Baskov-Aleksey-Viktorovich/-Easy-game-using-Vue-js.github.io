@@ -36,7 +36,7 @@
       </section>
       <section id="controls" v-else>
         <button @click="attackMonster">ATTACK</button>
-        <button :disabled="checkSpecialAttack" @click="specialAttac">SPECIAL ATTACK</button>
+        <button :disabled="checkSpecialAttack" @click="specialAttack">SPECIAL ATTACK</button>
         <button :disabled="checkHealtPlayer" @click="healtPlayer">HEAL</button>
         <button @click="surrender">SURRENDER</button>
       </section>
@@ -44,7 +44,7 @@
         <h2>Battle Log</h2>
          <ul>
           <li v-for="logMessage in logMessages">
-            <span :class="{'log--player':logMessage.actionBy === 'Player', 'log--monster': logMessage.actionBy === 'Monster'}">{{logMessage.actionBy === 'Player' ? 'Player' : 'Monster'}}</span>
+            <span :class="{'log--player': logMessage.actionBy === 'Player', 'log--monster': logMessage.actionBy === 'Monster'}">{{logMessage.actionBy === 'Player' ? 'Player' : 'Monster'}}</span>
             <span v-if="logMessage.actionType === 'heal'">heals himself for <span class="log--heal">{{logMessage.actionValue}}</span></span>
             <span v-else> attacks and deals <span class="log--damage">{{logMessage.actionValue}} </span></span>
           </li>
